@@ -73,12 +73,12 @@ http://sachagreif.com/sass-color-variables/
 TYPOGRAPHY
 *********************/
 
-@import url(http://fonts.googleapis.com/css?family=Karla:400italic,700,700italic,400|Hammersmith+One);
+@import url('https://fonts.googleapis.com/css?family=Hammersmith+One|Karla:400,400i&display=swap');
 
-$sans-serif:        "Helvetica Neue", Helvetica, Arial, sans-serif;
-$serif:             "Georgia", Cambria, Times New Roman, Times, serif;
-$theme-font: 		"Hammersmith One", $sans-serif;
-$alt-font:			"Karla", $sans-serif;
+$sans-serif:        -system-ui, sans-serif;
+$serif:             serif;
+$theme-font: 		'Hammersmith One', $sans-serif;
+$alt-font:			'Karla', $sans-serif;
 
 
 /* 	To embed your own fonts, use this syntax
