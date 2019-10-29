@@ -1,0 +1,409 @@
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Base Mobile Stylesheet
+
+Be light and don't over style since everything here will be
+loaded by mobile devices. You want to keep it as minimal as
+possible. This is called at the top of the main stylsheet
+and will be used across all viewports.
+
+******************************************************************/
+
+/*********************
+GENERAL STYLES
+*********************/
+
+::selection {
+  background: $link-color;
+  color:#fff; /* WebKit/Blink Browsers */
+}
+::-moz-selection {
+  background: $link-color;
+  color:#fff; /* WebKit/Blink Browsers */
+}
+
+body {
+	font-family: $alt-font;
+	font-size: 100%;
+	line-height: 1.5;
+	color: $text-color;
+}
+
+/*********************
+LAYOUT & GRID STYLES
+*********************/
+
+.wrap {
+	width:80%;
+	max-width:600px;
+	margin: 0 auto;
+}
+
+/*********************
+LINK STYLES
+*********************/
+
+a, a:visited {
+	color: $link-color;
+
+	/* on hover */
+	&:hover, &:focus {
+		color: $link-hover;
+	}
+
+	/* on click */
+	&:active {
+
+	}
+
+	/* mobile tap color */
+	&:link {
+		/*
+		this highlights links on iPhones/iPads.
+		so it basically works like the :hover selector
+		for mobile devices.
+		*/
+		-webkit-tap-highlight-color : rgba( 0, 0, 0, 0.3 );
+	}
+}
+
+/******************************************************************
+H1, H2, H3, H4, H5 STYLES
+******************************************************************/
+
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
+	font-family: $theme-font;
+	text-rendering: optimizelegibility;
+	font-weight: regular;
+	line-height:1.1;
+	/*
+	if you're going to use webfonts, be sure to check your weights
+	http://css-tricks.com/watch-your-font-weight/
+	*/
+
+	/* removing text decoration from all headline links */
+	a {
+		text-decoration: none;
+	}
+}
+
+h1, .h1 {
+	font-size: 3em;
+}
+
+h2, .h2 {
+	font-size:2.4em;
+	margin-bottom: 0.2em;
+	text-transform:uppercase;
+	color:#c2c2c2;
+}
+
+h3, .h3 {
+	font-size: 1.5em;
+	margin:0 0 .3em;
+	font-family:$alt-font;
+	font-weight:400;
+	font-style:italic;
+
+	span {
+		font-weight:700;
+	}
+}
+
+h4, .h4 {
+	font-size: 1.1em;
+}
+
+h5, .h5 {
+	font-size: 0.846em;
+	line-height: 2.09em;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+}
+
+/*********************
+HEADER STYLES
+*********************/
+
+.header {
+	background:url(../images/bg-printing-press.jpg);
+	background-repeat:no-repeat;
+	background-position:center bottom;
+	background-size:700px 300px;
+	min-height:200px;
+}
+
+	#logo {
+		display:block;
+		width:100px;
+		margin:10% auto 5%;
+		height:143px;
+		background:url(../images/impetus-books-logo-400.png) no-repeat;
+		background-size:contain;
+		text-indent:-9999px;
+	}
+
+/*********************
+NAVIGATION STYLES
+*********************/
+
+/*
+all navs have a .nav class applied via
+the wp_menu function; this is so we can
+easily write one group of styles for
+the navs on the site so our css is cleaner
+and more scalable.
+*/
+
+.nav {
+	border: 1px solid #ccc;
+	border-bottom: 0;
+
+	li {
+
+		a {
+			display: block;
+			text-decoration: none;
+			padding: 10px 10px;
+			background-color: #eee;
+			border-bottom: 1px solid #ccc;
+
+			/*
+			remember this is for mobile ONLY, so there's no need
+			to even declare hover styles here, you can do it in
+			the style.scss file where it's relevant. We want to
+			keep this file as small as possible!
+			*/
+			&:hover, &:focus {
+
+			}
+		}
+
+		&:first-child {}
+
+		&:last-child {}
+
+		/*
+		so you really have to rethink your dropdowns for mobile.
+		you don't want to have it expand too much because the
+		screen is so small. How you manage your menu should
+		depend on the project. Here's some great info on it:
+		http://www.alistapart.com/articles/organizing-mobile/
+		*/
+		ul.sub-menu,
+		ul.children {
+
+			li {
+
+				a {
+					padding-left: 30px;
+
+					&:hover,
+					&:focus {}
+
+					&:link {}
+
+				}
+
+				&:first-child {}
+
+				&:last-child {}
+
+			}
+
+		}
+
+	} /* end .menu li */
+
+	/* highlight current page */
+	li.current-menu-item,
+	li.current_page_item,
+	li.current-page-ancestor {
+
+		a {}
+
+	}  /* end current highlighters */
+
+} /* end .nav */
+
+#spotlight img {
+	border-radius:500px;
+	-moz-border-radius:500px;
+	-webkit-border-radius:500px;
+	display:block;
+	margin:0;
+	width:84%;
+	height:auto;
+	margin:8%;
+}
+
+
+.altSection {
+	background:$blue;
+	color:#fff;
+	padding:.5em 0;
+
+	.entry-content a {
+		color:#fff;
+		text-decoration:underline;
+	}
+}
+
+.altHeader h2{
+	color:$blue;
+}
+
+/*********************
+POSTS & CONTENT STYLES
+*********************/
+
+#content {
+	margin-top: 2.2em;
+}
+
+		.hentry {
+
+			header {}
+
+			footer {}
+
+		} /* end .hentry */
+
+		/* entry content */
+		.entry-content {
+
+			p {}
+
+
+			ul, ol, table, dl {}
+
+			ul, ol {
+
+				li {}
+
+			}
+
+			ul {
+
+				li {}
+
+			}
+
+			ol {
+
+				li {}
+
+			}
+
+			blockquote {
+
+				&:before {}
+
+			}
+
+			dl {}
+
+			dt {}
+
+			dd {
+				margin-left: 0;
+				font-size: 0.9em;
+				color: #787878;
+				margin-bottom: 1.5em;
+			}
+
+			img {
+				margin: 0 0 1.5em 0;
+				max-width: 100%;
+				height: auto;
+			}
+
+			/*
+			image alignment on a screen this size may be
+			a bit difficult. It's set to start aligning
+			and floating images at the next breakpoint,
+			but it's up to you. Feel free to change it up.
+			*/
+			.alignleft, img.alignleft {}
+			.alignright, img.alignright {}
+			.aligncenter, img.aligncenter {}
+
+			video, object {
+				max-width: 100%;
+				height: auto;
+			}
+
+			pre {
+				background: #eee;
+				border: 1px solid #cecece;
+				padding: 10px;
+			}
+
+		} /* end .entry-content */
+
+
+/*********************
+BULK PAGE STYLES
+*********************/
+.entry-content {
+
+    .book {
+        /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#75bfd7+0,75bfd7+100&0.09+0,0.07+100 */
+        background: -moz-linear-gradient(top,  rgba(117,191,215,0.09) 0%, rgba(117,191,215,0.07) 100%); /* FF3.6-15 */
+        background: -webkit-linear-gradient(top,  rgba(117,191,215,0.09) 0%,rgba(117,191,215,0.07) 100%); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to bottom,  rgba(117,191,215,0.09) 0%,rgba(117,191,215,0.07) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1775bfd7', endColorstr='#1275bfd7',GradientType=0 ); /* IE6-9 */
+        border-radius:6px;
+        padding:10px;
+        margin-bottom:5%;
+
+        img {
+            display:block;
+            width:100%;
+            height:auto;
+            margin:0;
+        }
+
+        p:last-of-type {
+            margin-bottom:0;
+        }
+
+        .button {
+            margin-bottom:0;
+        }
+    }
+}
+
+/*********************
+FOOTER STYLES
+*********************/
+
+.footer {
+	clear: both;
+    padding:40px;
+    text-align:center;
+}
+
+	/*
+	if you checked out the link above:
+	http://www.alistapart.com/articles/organizing-mobile/
+	you'll want to style the footer nav
+	a bit more in-depth. Remember to keep
+	it simple because you'll have to
+	override these styles for the desktop
+	view.
+	*/
+	.footer-links {
+
+		ul {
+
+			li {}
+
+		}
+
+	} /* end .footer-links */
+
+
+	.copyright {}
