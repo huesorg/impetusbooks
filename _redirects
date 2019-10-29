@@ -1,4 +1,4 @@
 # Redirect default Netlify subdomain to primary domain
 http://impetusbooks.netlify.com/* http://impetus.pw/:splat 301!
 
-http://impetusbooks.pw/* https://impetusbooks.pw/:splat 301!
+http://impetus.pw/* https://impetus.pw/:splat 301!
