@@ -77,7 +77,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
 	font-family: $theme-font;
 	text-rendering: optimizelegibility;
 	font-weight: regular;
-	line-height:1.1;
+	line-height:1;
 	/*
 	if you're going to use webfonts, be sure to check your weights
 	http://css-tricks.com/watch-your-font-weight/
@@ -95,9 +95,9 @@ h1, .h1 {
 
 h2, .h2 {
 	font-size:2.4em;
-	margin-bottom: 0.2em;
+	margin-bottom: .5em;
 	text-transform:uppercase;
-	color:#c2c2c2;
+	color:#949494;
 }
 
 h3, .h3 {
@@ -145,88 +145,6 @@ HEADER STYLES
 		text-indent:-9999px;
 	}
 
-/*********************
-NAVIGATION STYLES
-*********************/
-
-/*
-all navs have a .nav class applied via
-the wp_menu function; this is so we can
-easily write one group of styles for
-the navs on the site so our css is cleaner
-and more scalable.
-*/
-
-.nav {
-	border: 1px solid #ccc;
-	border-bottom: 0;
-
-	li {
-
-		a {
-			display: block;
-			text-decoration: none;
-			padding: 10px 10px;
-			background-color: #eee;
-			border-bottom: 1px solid #ccc;
-
-			/*
-			remember this is for mobile ONLY, so there's no need
-			to even declare hover styles here, you can do it in
-			the style.scss file where it's relevant. We want to
-			keep this file as small as possible!
-			*/
-			&:hover, &:focus {
-
-			}
-		}
-
-		&:first-child {}
-
-		&:last-child {}
-
-		/*
-		so you really have to rethink your dropdowns for mobile.
-		you don't want to have it expand too much because the
-		screen is so small. How you manage your menu should
-		depend on the project. Here's some great info on it:
-		http://www.alistapart.com/articles/organizing-mobile/
-		*/
-		ul.sub-menu,
-		ul.children {
-
-			li {
-
-				a {
-					padding-left: 30px;
-
-					&:hover,
-					&:focus {}
-
-					&:link {}
-
-				}
-
-				&:first-child {}
-
-				&:last-child {}
-
-			}
-
-		}
-
-	} /* end .menu li */
-
-	/* highlight current page */
-	li.current-menu-item,
-	li.current_page_item,
-	li.current-page-ancestor {
-
-		a {}
-
-	}  /* end current highlighters */
-
-} /* end .nav */
 
 #spotlight img {
 	border-radius:500px;
@@ -242,17 +160,17 @@ and more scalable.
 
 .altSection {
 	background:$blue;
-	color:#fff;
-	padding:.5em 0;
+	color:#1A4756;
+	padding:1em 0;
 
 	.entry-content a {
-		color:#fff;
+		color:#081317;
 		text-decoration:underline;
 	}
 }
 
 .altHeader h2{
-	color:$blue;
+	color:#379CBE;
 }
 
 /*********************
@@ -262,87 +180,6 @@ POSTS & CONTENT STYLES
 #content {
 	margin-top: 2.2em;
 }
-
-		.hentry {
-
-			header {}
-
-			footer {}
-
-		} /* end .hentry */
-
-		/* entry content */
-		.entry-content {
-
-			p {}
-
-
-			ul, ol, table, dl {}
-
-			ul, ol {
-
-				li {}
-
-			}
-
-			ul {
-
-				li {}
-
-			}
-
-			ol {
-
-				li {}
-
-			}
-
-			blockquote {
-
-				&:before {}
-
-			}
-
-			dl {}
-
-			dt {}
-
-			dd {
-				margin-left: 0;
-				font-size: 0.9em;
-				color: #787878;
-				margin-bottom: 1.5em;
-			}
-
-			img {
-				margin: 0 0 1.5em 0;
-				max-width: 100%;
-				height: auto;
-			}
-
-			/*
-			image alignment on a screen this size may be
-			a bit difficult. It's set to start aligning
-			and floating images at the next breakpoint,
-			but it's up to you. Feel free to change it up.
-			*/
-			.alignleft, img.alignleft {}
-			.alignright, img.alignright {}
-			.aligncenter, img.aligncenter {}
-
-			video, object {
-				max-width: 100%;
-				height: auto;
-			}
-
-			pre {
-				background: #eee;
-				border: 1px solid #cecece;
-				padding: 10px;
-			}
-
-		} /* end .entry-content */
-
 
 /*********************
 BULK PAGE STYLES
@@ -385,25 +222,3 @@ FOOTER STYLES
     padding:40px;
     text-align:center;
 }
-
-	/*
-	if you checked out the link above:
-	http://www.alistapart.com/articles/organizing-mobile/
-	you'll want to style the footer nav
-	a bit more in-depth. Remember to keep
-	it simple because you'll have to
-	override these styles for the desktop
-	view.
-	*/
-	.footer-links {
-
-		ul {
-
-			li {}
-
-		}
-
-	} /* end .footer-links */
-
-
-	.copyright {}
